@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  head 
+    link(rel="stylesheet", href="/stylesheets/index.css")
+  h1#title
+    | Youtube File Converter
+  #form
+    #fields
+      input(type="text" name="youtube_url" placeholder="youtubeのリンク" id="youtube_url")
+      input(type="text" name="file_name" placeholder="file名はどうします？？" id="file_name")
+    #convert-buttons
+      button(type="button" id="mp3-convert")
+        | MP3として取得
+      button(type="button" id="mp4-convert")
+        | MP4として取得
+ 
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+  script(src="/javascripts/download_service.js" type='module')
+  
