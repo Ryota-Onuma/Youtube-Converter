@@ -1,7 +1,16 @@
+#top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #title {
+  display: inline-block;
   text-align: center;
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
   font-size: 1.8rem;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 20px;
 }
 #form {
   width: 100%;
@@ -24,6 +33,8 @@ input[type="text"] {
   margin: 20px;
   padding: 5px 10px;
   font-size: 1.3rem;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 input[type="text"]:focus {
   outline: 0;
@@ -37,16 +48,27 @@ input[type="text"]:focus {
   margin-top: 30px;
 }
 
-#convert-buttons > button {
+.convert-button {
   display: inline-block;
   margin: 20px;
   padding: 5px 20px;
   cursor: pointer;
-  background-color: transparent;
-  border: 1px solid black;
-  font-size: 1.3rem;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  font-size: 1.3rem;
 }
+.convert-button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px); /*下に動く*/
+}
+.convert-button:focus {
+  outline: 0;
+}
+
 #loading {
   width: 100%;
   height: 100vh;
@@ -60,7 +82,22 @@ input[type="text"]:focus {
   justify-content: center;
   display: none;
 }
-#loading > #now-loading {
+#loading > #loading-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading > #loading-container > img {
+  width: 40px;
+  height: 40px;
+}
+#loading > #loading-container > #now-converting {
   color: white;
+  display: inline-block;
+  margin-top: 40px;
   font-size: 1.3rem;
 }

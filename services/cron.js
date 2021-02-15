@@ -3,7 +3,7 @@ const fs = require('fs');
 // 定期的にcronででファイル削除
 cron.schedule('0 0 3,6,9,12,15,18,21 * * *', () => {
 
-const dir = '../mp3';
+const dir = '../tmp';
 
 fs.readdir(dir, function(err, files){
   if(err){

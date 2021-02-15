@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "nodemon bin/www"
+    "start": "bin/www",
+    "serve": "nodemon bin/www",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -11,14 +13,10 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
-    "ffmpeg": "^0.0.4",
-    "ffmpeg-static": "^4.2.7",
-    "fluent-ffmpeg": "^2.1.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-cron": "^2.0.3",
     "pug": "^3.0.0",
-    "youtube-dl": "^3.1.0",
     "ytdl-core": "^4.4.5"
   },
   "devDependencies": {
