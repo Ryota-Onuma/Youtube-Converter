@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 const downloadRouter = require('./routes/download')
-process.env.root_path = __dirname
+process.env.root_path = __dirname // ルートディレクトリパスを環境変数に保存しとく
 var app = express();
 
 // view engine setup
@@ -17,7 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('mp3'))
+app.use(express.static('tmp')) // herokuはtmpしか保存できないので
+
 app.use('/', indexRouter);
 app.use('/download', downloadRouter);
 
